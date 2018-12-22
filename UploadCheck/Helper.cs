@@ -15,6 +15,7 @@ namespace UploadCheck
 
         public static void PrintResults(List<string> results)
         {
+            Console.WriteLine("\n\n-------------- Missed screenshots ------------\n");
             foreach (var item in results)
             {
                 Console.WriteLine(item);
@@ -25,6 +26,17 @@ namespace UploadCheck
         {
             Console.WriteLine("Go to the .config file to change the app settings.\n");
             Console.WriteLine($"Folder: {ConfigReader.ResultsFolder}");
+        }
+
+        public static void UpdateConsole()
+        {
+            Console.WriteLine("\n------------------------------------");
+            Console.WriteLine("Press ENTER to update information...");
+            Console.ReadLine();
+            Console.Clear();
+            System.Threading.Thread.Sleep(100);
+            Console.WriteLine("Updated: {0}", DateTime.Now.TimeOfDay);
+            Console.WriteLine("------------------------------------\n");
         }
     }
 }

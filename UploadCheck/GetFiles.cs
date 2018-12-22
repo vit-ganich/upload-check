@@ -14,7 +14,7 @@ namespace UploadCheck
 
             if (filesInFolder.Count == 0)
             {
-                throw new Exception("The results folder is empty.");
+                Console.WriteLine($"Folder {folder} is empty.");
             }
             return filesInFolder;
         }

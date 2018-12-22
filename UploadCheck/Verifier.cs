@@ -27,7 +27,7 @@ namespace UploadCheck
 
         public static void SortResults(List<string> missedChrome, List<string> missedIE)
         {
-            
+            Console.WriteLine("\n-------------- Missed files ------------------\n");
             foreach (var file in missedChrome)
             {
                 if (missedIE.Contains(file))

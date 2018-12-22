@@ -18,7 +18,10 @@ namespace UploadCheck
         public static List<string> GetExtractedFeatureNames(List<string> rawFilesList)
         {
             var parsedFileNames = new List<string>();
-
+            if(rawFilesList == null)
+            {
+                return null;
+            }
             foreach (var fullPath in rawFilesList)
             {
                 var rawFileName = GetFileNameFromFullPath(fullPath);
@@ -65,7 +68,7 @@ namespace UploadCheck
         /// <returns></returns>
         public static string RegExExclude(string rawFileName)
         {
-            var pattern = @"_oracle_(Chrome|(IE\d\d*))_B\d\d*.\d\d*.\d\d*.\d\d*((\d\d*(.+?))|(\d\d*-\d\d*-0-\d\d*)).trx";
+            var pattern = @"((_mssql_)|(_oracle_))(Chrome|(IE\d\d*))_B\d\d*.\d\d*.\d\d*.\d\d*((\d\d*(.+?))|(\d\d*-\d\d*-0-\d\d*)).trx";
             Regex rx = new Regex(pattern, RegexOptions.IgnoreCase);
             Match match = rx.Match(rawFileName);
             return match.ToString();
