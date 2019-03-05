@@ -43,7 +43,7 @@ namespace UploadCheck
             {
                 var rawFileName = GetFileNameFromFullPath(fullPath);
                 // Remove the unnecessary parts of the file name
-                var temp = rawFileName.Replace(ConfigReader.ScreenshotsExtension, "");
+                var temp = rawFileName.Replace(ConfigReader.ScreenShotsExtension, "");
                 temp = temp.Replace(".feature", "");
                 temp = ReplaceSpaceWithDash(temp);
 

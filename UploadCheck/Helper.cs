@@ -25,7 +25,9 @@ namespace UploadCheck
         public static void PrintInfo()
         {
             Console.WriteLine("Go to the .config file to change the app settings.\n");
-            Console.WriteLine($"Folder: {ConfigReader.ResultsFolder}");
+            Console.WriteLine($"Chrome TRX:  {ConfigReader.ChromeResultsPath}");
+            Console.WriteLine($"IE TRX:      {ConfigReader.IEResultsPath}");
+            Console.WriteLine($"Screenshots: {ConfigReader.ScreenShotsPath}");
         }
 
         public static void UpdateConsole()

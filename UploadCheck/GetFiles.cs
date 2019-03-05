@@ -21,22 +21,22 @@ namespace UploadCheck
 
         public static List<string> ChromeResults()
         {
-            var folder = $"{ConfigReader.ResultsFolder}\\Chrome\\";
+            var folder = ConfigReader.ChromeResultsPath;
             var ext = $"*{ConfigReader.FilesExtension}";
             return GetResultsList(folder, ext);
         }
 
         public static List<string> IEResults()
         {
-            var folder = $"{ConfigReader.ResultsFolder}\\IE\\";
+            var folder = ConfigReader.IEResultsPath;
             var ext = $"*{ConfigReader.FilesExtension}";
             return GetResultsList(folder, ext);
         }
 
         public static List<string> Screenshots()
         {
-            var folder = $"{ConfigReader.ResultsFolder}";
-            var ext = $"*{ConfigReader.ScreenshotsExtension}";
+            var folder = ConfigReader.ScreenShotsPath;
+            var ext = $"*{ConfigReader.ScreenShotsExtension}";
             return GetResultsList(folder, ext);
         }
     }
